@@ -140,6 +140,7 @@ $('save').onclick = () => { const v=$('src').value.trim(); try{ localStorage.set
 $('reset').onclick = () => { $('src').value = GUION; };
 $('text').onclick = e => { const i=spans.indexOf(e.target); if(i>=0){ pos=i; mark(); } };
 render(load());
+try{ screen.orientation && screen.orientation.unlock && screen.orientation.unlock() }catch(e){}
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>
 </body>
